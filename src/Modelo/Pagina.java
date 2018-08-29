@@ -10,14 +10,13 @@ package Modelo;
  * @author alunos
  */
 public class Pagina {
-    private static final int M = 4;
-    
-    private int m;                             // id da Página
-    private Pessoa[] children = new Pessoa[M];   // vetor de filhos
-
-        // create a node with k children
-    public Pagina(int k) {
-         m = k;
+    public int n; 
+    public Pessoa r[];
+    public Pagina p[]; 
+    public Pagina (int mm) {
+      this.n = 0; 
+      this.r = new Pessoa[mm]; 
+      this.p = new Pagina[mm+1];
     }
     
 }

@@ -61,10 +61,9 @@ public class Pessoa {
     }
  
     public int compara (Pessoa it) {
-    Pessoa item = (Pessoa) it;
-    if (this.id < item.id) {
+    if (this.id < it.id) {
         return -1;
-    }else if (this.id > item.id){
+    }else if (this.id > it.id){
         return 1;
     }
     return 0;
