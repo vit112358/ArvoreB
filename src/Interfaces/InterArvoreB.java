@@ -14,7 +14,6 @@ public interface InterArvoreB<T> {
     
     public boolean inserir(T valor);
     
-    public T busca(Integer id);
+    public T busca(T reg);
     
-    public boolean destroy();
 }

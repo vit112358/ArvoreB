@@ -44,24 +44,31 @@ public class ImplArvoreB<T> implements InterArvoreB<T>{
     }
 
     @Override
-    public T busca(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public T busca(T reg) {
+        return this.pesquisa (reg, this.raiz);
     }
 
-    @Override
-    public boolean destroy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     /*Métodos Privados*/
-    
-    private Pessoa busca (){
-        return null;
+    private T pesquisa (T reg, Pagina ap) {
+        
+        Pessoa aux = (Pessoa) reg;
+        if (ap == null) return null; // Registro @{\it n\~ao}@ econtrado
+        else {
+          int i = 0;
+          while ((i < ap.n-1) && (aux.compara (ap.r[i]) > 0)) i++;
+          if (aux.compara (ap.r[i]) == 0) 
+            {
+                T result =(T) ap.r[i];
+                return result;
+            }
+          else if (aux.compara (ap.r[i]) < 0) return pesquisa (reg, ap.p[i]);
+          else return pesquisa (reg, ap.p[i+1]);
+        }
     }
-    
     private void imprime (Pagina p, int nivel) {
         if (p != null) {
-            System.out.print ("  Nivel" + nivel + ":");
+            System.out.print ("  Nivel " + nivel + ":");
             for (int i = 0; i < p.n; i++)
                 System.out.print (" "+p.r[i].toString());
             System.out.println ();

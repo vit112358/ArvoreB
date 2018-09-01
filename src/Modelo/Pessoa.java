@@ -20,9 +20,9 @@ public class Pessoa {
         
     }
     
-    public Pessoa(String Nome,String end,String tel){
+    public Pessoa(Integer id, String Nome,String end,String tel){
         super();
-        this.id=0;
+        this.id=id;
         this.nome=Nome;
         this.endereco=end;
         this.telefone=tel;        
@@ -71,6 +71,6 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", telefone=" + telefone + '}';
+        return "Pessoa{" + "id=" + id +'}';
     }
 }
